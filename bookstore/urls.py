@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+admin.site.site_header = 'Bookstore administration'
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^store/', include('store.urls'), name='store'),
