@@ -1,0 +1,5 @@
+Welcome to {{site.name}}. Please click the link below to activate your account:
+
+http://{{site.domain}}{% url 'registration_activate' activation_key %}
+
+This link is valid for {{expiration_days}}. If it wasn't you who signed up for this account, just ignore this email.
