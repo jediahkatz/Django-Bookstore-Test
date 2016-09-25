@@ -15,7 +15,8 @@
         Hello! <a href="{% url 'auth_login' %}">Log in</a>
     </h4>
 {% endif %}
-Hello store! There are {{ count }} books in stock.</br>
-User location: {{ request.session.location }}
+Hello store! There are {{ count }} books in stock.<br>
+User location: {{ request.session.location }}<br>
+And just to check: {{ request.session.newVar }}
 </body>
 </html>

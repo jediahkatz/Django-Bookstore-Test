@@ -21,5 +21,6 @@ admin.site.site_header = 'Bookstore administration'
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^store/', include('store.urls'), name='store'),
+    url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^accounts/', include('registration.backends.default.urls')),
 ]

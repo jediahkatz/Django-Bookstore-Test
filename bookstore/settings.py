@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
     'store',
     'registration',
 ]
@@ -64,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -71,6 +73,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookstore.wsgi.application'
 
+AUTHENTICATION_BACKENDS = [
+    'social.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend'
+]
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -134,3 +140,7 @@ EMAIL_HOST_PASSWORD = "beatssuck@dr3"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "books@jedsbooks.com"
+
+# Social auth - Facebook
+SOCIAL_AUTH_FACEBOOK_KEY = '312224799158023'
+SOCIAL_AUTH_FACEBOOK_SECRET = '81e5b6f192a66e451818dc0b1e7ee6d9'

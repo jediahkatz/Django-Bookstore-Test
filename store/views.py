@@ -13,4 +13,5 @@ def store(request):
     request.session['location'] = "unknown"
     if request.user.is_authenticated():
         request.session['location'] = "NYC"
+        request.session['newVar'] = "ya b we did eeet"
     return render(request, 'store.html', context)
